@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asistente de Ventas de Ropa</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========================================================
+       HTML: CABECERA
+       ======================================================== -->
+  <header>
+    <button class="icon-btn" id="menuBtn" title="Menú" aria-label="Menú">☰</button>
+    <button class="icon-btn" id="newChatBtn" title="Nuevo chat" aria-label="Nuevo chat">⊕</button>
+  </header>
+
+  <!-- ========================================================
+       HTML: PANEL DE CLAVE OPENROUTER
+       ======================================================== -->
+  <section class="key-panel" id="keyPanel">
+    <small>Pega tu clave de OpenRouter. Se guarda solo en esta pestaña (sessionStorage).</small>
+    <input type="password" id="apiKeyInput" placeholder="sk-or-..." autocomplete="off">
+    <button id="saveKeyBtn">Guardar</button>
+  </section>
+
+  <!-- ========================================================
+       HTML: ÁREA DE CHAT
+       ======================================================== -->
+  <main>
+    <!-- Pantalla inicial -->
+    <div class="welcome" id="welcome">
+      <svg class="welcome-logo" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 3a7 7 0 1 1 0 14 7 7 0 0 1 0-14Zm0 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/>
+      </svg>
+      <h1>¿Por dónde te gustaría empezar?</h1>
+    </div>
+
+    <!-- Mensajes -->
+    <div id="messages" aria-live="polite"></div>
+    <div class="typing hidden" id="typing">Escribiendo...</div>
+  </main>
+
+  <!-- ========================================================
+       HTML: BARRA DE ENTRADA
+       ======================================================== -->
+  <form class="composer" id="composer" autocomplete="off">
+    <textarea id="userInput" rows="1" placeholder="Escribe tu mensaje..." aria-label="Mensaje"></textarea>
+    <div class="composer-bottom">
+      <div class="pills">
+        <span class="pill">Pensamiento</span>
+        <span class="pill active">Buscar</span>
+      </div>
+      <div class="actions">
+        <button type="button" class="icon-btn" title="Adjuntar" aria-label="Adjuntar">+</button>
+        <button type="submit" class="send-btn" id="sendBtn" aria-label="Enviar">➤</button>
+      </div>
+    </div>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
